@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sayfa Bulunamadı | 55 Fındık</title>
+  <meta name="robots" content="noindex, follow" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #1c0f0a 0%, #2a1810 50%, #3a1e13 100%);
+      --accent-red: #E63946;
+      --accent-red-hover: #D62828;
+      --accent-green: #2A9D8F;
+      --accent-green-hover: #218377;
+      --text-main: #F4EAD4;
+      --text-muted: #A89F91;
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    /* Arka Plan Işık Efektleri */
+    .bg-glow {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: var(--accent-red);
+      filter: blur(150px);
+      opacity: 0.15;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .card-container {
+      position: relative;
+      z-index: 1;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 50px 40px;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo-wrapper {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 25px;
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #2A1810;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      border: 3px solid var(--accent-red);
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 404 & Fındık Animasyon Alanı */
+    .error-code-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .error-code {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 100px;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(180deg, #FFFFFF 30%, var(--accent-red) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -2px;
+    }
+
+    .nut-icon {
+      position: absolute;
+      top: -15px;
+      right: -25px;
+      font-size: 42px;
+      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #FFF;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .btn-primary {
+      background: var(--accent-red);
+      color: #FFF;
+      box-shadow: 0 4px 20px rgba(230, 57, 70, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--glass-border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      color: #FFF;
+    }
+
+    /* Ufak Animasyonlar */
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(8deg); }
+    }
+
+    @media (max-width: 480px) {
+      .card-container { padding: 35px 20px; }
+      .error-code { font-size: 80px; }
+      .nut-icon { font-size: 32px; right: -15px; }
+      .buttons { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow"></div>
+
+  <div class="card-container">
+    <div class="logo-wrapper">
+      <div class="logo">
+        <img src="https://raw.githubusercontent.com/5htr59415rtrhr5h9r59m9k99h9g99u3s96tjy5/REPODENEMELER/refs/heads/main/data/55f%C4%B1nd%C4%B1k.PNG" alt="55 Fındık Logo" onerror="this.style.display='none'; this.parentElement.textContent='55';" />
+      </div>
+    </div>
+
+    <div class="error-code-wrapper">
+      <div class="error-code">404</div>
+      <div class="nut-icon"></div>
+    </div>
+
+    <h1>Bu Sayfa Fındık Gibi Kayboldu!</h1>
+    
+    <p>Aradığınız sayfa silinmiş, ismi değiştirilmiş veya geçici olarak kullanılamıyor olabilir.</p>
+
+    <div class="buttons">
+      <a href="https://55findik.com/" class="btn btn-primary">
+        <i class="fas fa-house"></i> Ana Sayfa
+      </a>
+      <a href="https://wa.me/905479355555" class="btn btn-secondary">
+        <i class="fas fa-envelope"></i> İletişim
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
